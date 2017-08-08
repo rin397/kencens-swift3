@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UIPickerViewDataSource {
+class ViewController: UIViewController  {
 
     var componentArray:[String]!
     var pickerDataSource : [String: Int]!
@@ -53,7 +53,6 @@ class ViewController: UIViewController , UIPickerViewDataSource {
         pickerDataSource = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
         componentArray = Array(pickerDataSource.keys)
         self.customerPicker.reloadAllComponents()
-        
 
     }
     
@@ -98,17 +97,12 @@ class ViewController: UIViewController , UIPickerViewDataSource {
     
 
     override func viewDidAppear(_ animated: Bool) {
+        self.customerPicker.selectRow(1, inComponent: 0, animated: true)
         
         pickerSelectValue = componentArray[self.customerPicker.selectedRow(inComponent:0)]
     }
    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-         return pickerDataSource.count
-    }
     
     func initViewValue(){
         timerNumber = pickerDataSource[pickerSelectValue]
@@ -126,6 +120,17 @@ class ViewController: UIViewController , UIPickerViewDataSource {
 }
 
 
+extension ViewController:UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return pickerDataSource.count
+    }
+}
+
 extension ViewController:UIPickerViewDelegate {
   
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -141,9 +146,6 @@ extension ViewController:UIPickerViewDelegate {
 
 extension ViewController:TypeValueUpdateDelegate {
     func userDidEnterDataInvoke(data: Int, type: String){
-        print("userDidEnterDataInvoke invoke...")
-        print(data)
-        
         timerTask[type] = data
         pickerDataSource[type] = data
         defaults.set(timerTask, forKey: "timerTask")
