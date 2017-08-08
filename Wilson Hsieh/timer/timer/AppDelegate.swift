@@ -7,10 +7,13 @@
 //
 
 import UIKit
+let defaults = UserDefaults.standard
+var timerTask : [String: Int] = ["熱身":120, "低強度訓練":150, "高強度訓練":80 , "休息":60];
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
 

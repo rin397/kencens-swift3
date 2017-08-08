@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController , UIPickerViewDataSource{
+class ViewController: UIViewController , UIPickerViewDataSource {
 
-    
-    var pickerDataSource : [String: Int] = ["熱身":120, "低強度訓練":150, "高強度訓練":80 , "休息":60];
     var componentArray:[String]!
+    var pickerDataSource : [String: Int]!
     var pickerSelectValue:String! {
         didSet {
             initViewValue()
@@ -50,9 +49,11 @@ class ViewController: UIViewController , UIPickerViewDataSource{
         super.viewDidLoad()
         customerPicker.delegate=self
         customerPicker.dataSource = self
-        timerNumber = 60
+        defaults.set(timerTask, forKey: "timerTask")
+        pickerDataSource = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
         componentArray = Array(pickerDataSource.keys)
         self.customerPicker.reloadAllComponents()
+        
 
     }
     
@@ -86,8 +87,6 @@ class ViewController: UIViewController , UIPickerViewDataSource{
         super.didReceiveMemoryWarning()
     }
     
-    
-    
     func decredTime(){
         if (timerNumber > 0){
             timerNumber! -= 1
@@ -111,12 +110,19 @@ class ViewController: UIViewController , UIPickerViewDataSource{
          return pickerDataSource.count
     }
     
-    
     func initViewValue(){
         timerNumber = pickerDataSource[pickerSelectValue]
         updateTimerView()
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settingType" {
+            let tableView: TableViewController = segue.destination as! TableViewController
+            tableView.delegate = self
+        }
+    }
+
 }
 
 
@@ -130,6 +136,17 @@ extension ViewController:UIPickerViewDelegate {
     {
         pickerSelectValue = componentArray[row]
         
+    }
+}
+
+extension ViewController:TypeValueUpdateDelegate {
+    func userDidEnterDataInvoke(data: Int, type: String){
+        print("userDidEnterDataInvoke invoke...")
+        print(data)
+        
+        timerTask[type] = data
+        pickerDataSource[type] = data
+        defaults.set(timerTask, forKey: "timerTask")
     }
 }
 
