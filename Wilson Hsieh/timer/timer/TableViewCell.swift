@@ -40,7 +40,7 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        timerTaskDic = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

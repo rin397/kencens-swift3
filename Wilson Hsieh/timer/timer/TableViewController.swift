@@ -22,9 +22,7 @@ class TableViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerTaskDic = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
-        timerKey = Array(timerTaskDic.keys)
-        
+                
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +51,7 @@ class TableViewController: UITableViewController  {
         cell.typeLabel.text = type
         cell.typeText.text = String(sec)
         cell.delegate = self
+        cell.timerTaskDic = self.timerTaskDic
         
         return cell
     }

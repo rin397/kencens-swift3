@@ -12,6 +12,7 @@ class ViewController: UIViewController  {
 
     var componentArray:[String]!
     var pickerDataSource : [String: Int]!
+    var timerNumber:Int!
     var pickerSelectValue:String! {
         didSet {
             initViewValue()
@@ -24,7 +25,7 @@ class ViewController: UIViewController  {
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var customerPicker: UIPickerView!
-    var timerNumber:Int!
+    
     
     @IBAction func startActionBtn(_ sender: Any) {
         if self.isTimerRun{
@@ -49,10 +50,18 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         customerPicker.delegate=self
         customerPicker.dataSource = self
-        defaults.set(timerTask, forKey: "timerTask")
-        pickerDataSource = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
+        
+        if defaults.object(forKey: "timerTask") != nil{
+            pickerDataSource = defaults.object(forKey: "timerTask") as? [String: Int] ?? [String: Int]()
+
+        }else{
+            pickerDataSource = timerTask
+            defaults.set(pickerDataSource, forKey: "timerTask")
+        }
         componentArray = Array(pickerDataSource.keys)
         self.customerPicker.reloadAllComponents()
+        self.customerPicker.selectRow(1, inComponent: 0, animated: true)
+        pickerSelectValue = componentArray[self.customerPicker.selectedRow(inComponent:0)]
 
     }
     
@@ -97,9 +106,7 @@ class ViewController: UIViewController  {
     
 
     override func viewDidAppear(_ animated: Bool) {
-        self.customerPicker.selectRow(1, inComponent: 0, animated: true)
-        
-        pickerSelectValue = componentArray[self.customerPicker.selectedRow(inComponent:0)]
+        //
     }
    
     
@@ -114,9 +121,10 @@ class ViewController: UIViewController  {
         if segue.identifier == "settingType" {
             let tableView: TableViewController = segue.destination as! TableViewController
             tableView.delegate = self
+            tableView.timerTaskDic = pickerDataSource
+            tableView.timerKey = componentArray
         }
     }
-
 }
 
 
@@ -146,9 +154,11 @@ extension ViewController:UIPickerViewDelegate {
 
 extension ViewController:TypeValueUpdateDelegate {
     func userDidEnterDataInvoke(data: Int, type: String){
-        timerTask[type] = data
+        
         pickerDataSource[type] = data
-        defaults.set(timerTask, forKey: "timerTask")
+        initViewValue()
+        defaults.set(pickerDataSource, forKey: "timerTask")
+        defaults.synchronize()
     }
 }
 
