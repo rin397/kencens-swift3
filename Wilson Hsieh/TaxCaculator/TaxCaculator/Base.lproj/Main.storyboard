@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaxCaculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="inputPrice" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-qf-ApA">
+                                <rect key="frame" x="56" y="83" width="267" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="89q-nx-deu"/>
+                                    <constraint firstAttribute="height" constant="30" id="hXS-qu-PLe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qnS-92-SE7">
+                                <rect key="frame" x="51" y="207" width="272" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="9g8-P4-F6O"/>
+                                    <constraint firstAttribute="width" constant="272" id="NEq-bE-Rrs"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="3%"/>
+                                    <segment title="5%"/>
+                                    <segment title="8%"/>
+                                    <segment title="10%"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-3I-nln">
+                                <rect key="frame" x="151" y="143" width="69" height="32"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.75294117650000003" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="DuN-bd-qHJ"/>
+                                    <constraint firstAttribute="width" constant="69" id="yd0-gj-Wgl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="計算"/>
+                                <connections>
+                                    <action selector="caculateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8No-cs-zey"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="resultLabel" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ7-xv-ceg">
+                                <rect key="frame" x="56" y="257" width="267" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="5ut-hs-lbG"/>
+                                    <constraint firstAttribute="height" constant="96" id="lPG-hq-hJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qnS-92-SE7" secondAttribute="trailing" constant="36" id="5T4-qP-5S4"/>
+                            <constraint firstItem="qnS-92-SE7" firstAttribute="top" secondItem="FU0-3I-nln" secondAttribute="bottom" constant="32" id="7nh-6I-wdC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FU0-3I-nln" secondAttribute="trailing" constant="139" id="DbH-Dc-HqB"/>
+                            <constraint firstItem="iZ7-xv-ceg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="Loi-Gf-phj"/>
+                            <constraint firstItem="FU0-3I-nln" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="135" id="SHa-iE-9YU"/>
+                            <constraint firstItem="yyu-qf-ApA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="WGg-11-1E3"/>
+                            <constraint firstItem="FU0-3I-nln" firstAttribute="top" secondItem="yyu-qf-ApA" secondAttribute="bottom" constant="30" id="Xv1-t2-Lmo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yyu-qf-ApA" secondAttribute="trailing" constant="36" id="Y0s-KD-ARE"/>
+                            <constraint firstItem="FU0-3I-nln" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YuE-si-bxb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iZ7-xv-ceg" secondAttribute="trailing" constant="36" id="a42-sO-dzw"/>
+                            <constraint firstItem="qnS-92-SE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="eb2-IY-QgK"/>
+                            <constraint firstItem="yyu-qf-ApA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="63" id="jW7-Hv-un0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yyu-qf-ApA" secondAttribute="trailing" constant="36" id="jyP-9k-J0d"/>
+                            <constraint firstItem="iZ7-xv-ceg" firstAttribute="top" secondItem="qnS-92-SE7" secondAttribute="bottom" constant="22" id="xbe-AU-oxh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="iZ7-xv-ceg" id="JqI-KI-VB3"/>
+                        <outlet property="taxFieldInput" destination="yyu-qf-ApA" id="2SH-2u-qe4"/>
+                        <outlet property="taxRateList" destination="qnS-92-SE7" id="Uig-i3-2jt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
