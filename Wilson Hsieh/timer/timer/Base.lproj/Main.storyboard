@@ -149,6 +149,42 @@
             </objects>
             <point key="canvasLocation" x="1101.5999999999999" y="136.28185907046478"/>
         </scene>
+        <!--New Table View Controller-->
+        <scene sceneID="088-Fk-RFO">
+            <objects>
+                <tableViewController id="hgX-ez-Ofg" customClass="NewTableViewController" customModule="timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iyZ-GU-oa4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wd4-5O-Rcg">
+                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="w15-wM-gpv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w15-wM-gpv" id="z6K-FM-oUP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hgX-ez-Ofg" id="jBF-BC-zuT"/>
+                            <outlet property="delegate" destination="hgX-ez-Ofg" id="ksV-ao-bZi"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="test" destination="Wd4-5O-Rcg" id="484-8Z-Xe6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Trs-3N-Onq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="137"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="4MB-ol-u9H">
             <objects>

@@ -16,6 +16,7 @@
 		C81E11111F3854F700DFD6AC /* timerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E11101F3854F700DFD6AC /* timerUITests.swift */; };
 		C87E22EE1F39C23100EA61F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87E22ED1F39C23100EA61F2 /* TableViewController.swift */; };
 		C87E22F01F39E72900EA61F2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87E22EF1F39E72900EA61F2 /* TableViewCell.swift */; };
+		C880636C1F4080CE00DAC32D /* NewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880636B1F4080CE00DAC32D /* NewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C81E11121F3854F700DFD6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C87E22ED1F39C23100EA61F2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C87E22EF1F39E72900EA61F2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C880636B1F4080CE00DAC32D /* NewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C81E10FC1F3854F600DFD6AC /* Info.plist */,
 				C87E22ED1F39C23100EA61F2 /* TableViewController.swift */,
 				C87E22EF1F39E72900EA61F2 /* TableViewCell.swift */,
+				C880636B1F4080CE00DAC32D /* NewTableViewController.swift */,
 			);
 			path = timer;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C880636C1F4080CE00DAC32D /* NewTableViewController.swift in Sources */,
 				C81E10F31F3854F600DFD6AC /* ViewController.swift in Sources */,
 				C87E22F01F39E72900EA61F2 /* TableViewCell.swift in Sources */,
 				C87E22EE1F39C23100EA61F2 /* TableViewController.swift in Sources */,

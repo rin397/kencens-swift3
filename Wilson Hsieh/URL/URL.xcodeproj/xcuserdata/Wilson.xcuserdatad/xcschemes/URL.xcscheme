@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C81E10EC1F3854F600DFD6AC"
-               BuildableName = "timer.app"
-               BlueprintName = "timer"
-               ReferencedContainer = "container:timer.xcodeproj">
+               BlueprintIdentifier = "C866E4C91F4173120086D46F"
+               BuildableName = "URL.app"
+               BlueprintName = "URL"
+               ReferencedContainer = "container:URL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,35 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C81E11001F3854F700DFD6AC"
-               BuildableName = "timerTests.xctest"
-               BlueprintName = "timerTests"
-               ReferencedContainer = "container:timer.xcodeproj">
+               BlueprintIdentifier = "C866E4DD1F4173120086D46F"
+               BuildableName = "URLTests.xctest"
+               BlueprintName = "URLTests"
+               ReferencedContainer = "container:URL.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "AppTest">
-               </Test>
-            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C81E110B1F3854F700DFD6AC"
-               BuildableName = "timerUITests.xctest"
-               BlueprintName = "timerUITests"
-               ReferencedContainer = "container:timer.xcodeproj">
+               BlueprintIdentifier = "C866E4E81F4173120086D46F"
+               BuildableName = "URLUITests.xctest"
+               BlueprintName = "URLUITests"
+               ReferencedContainer = "container:URL.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C81E10EC1F3854F600DFD6AC"
-            BuildableName = "timer.app"
-            BlueprintName = "timer"
-            ReferencedContainer = "container:timer.xcodeproj">
+            BlueprintIdentifier = "C866E4C91F4173120086D46F"
+            BuildableName = "URL.app"
+            BlueprintName = "URL"
+            ReferencedContainer = "container:URL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C81E10EC1F3854F600DFD6AC"
-            BuildableName = "timer.app"
-            BlueprintName = "timer"
-            ReferencedContainer = "container:timer.xcodeproj">
+            BlueprintIdentifier = "C866E4C91F4173120086D46F"
+            BuildableName = "URL.app"
+            BlueprintName = "URL"
+            ReferencedContainer = "container:URL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C81E10EC1F3854F600DFD6AC"
-            BuildableName = "timer.app"
-            BlueprintName = "timer"
-            ReferencedContainer = "container:timer.xcodeproj">
+            BlueprintIdentifier = "C866E4C91F4173120086D46F"
+            BuildableName = "URL.app"
+            BlueprintName = "URL"
+            ReferencedContainer = "container:URL.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

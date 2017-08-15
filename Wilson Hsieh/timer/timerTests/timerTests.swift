@@ -11,25 +11,41 @@ import XCTest
 
 class timerTests: XCTestCase {
     
+    var i = 0
+    
     override func setUp() {
+        print("it's set up start")
+        
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        print("it's set up start")
+        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       
+        print("it's tear Down start")
         super.tearDown()
+        print("it's tear Down end")
+        
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFunction() {
+        
+        print("it's testFunction start")
+        
+        XCTAssertEqual(1, 1)
+       
+        print("it's testFunction end")
+        
     }
+    
+  
     
     func testPerformanceExample() {
-        // This is an example of a performance test case.
+        
         self.measure {
-            // Put the code you want to measure the time of here.
+           
         }
     }
     
