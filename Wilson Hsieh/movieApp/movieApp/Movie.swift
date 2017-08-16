@@ -15,13 +15,16 @@ class Movie: NSObject {
     var postPath:String?
     var overview:String?
     var voteCount:Int?
+    var dataImg:UIImage?
+    var voteAverage:Float?
     
-     init(title:String , releaseDate:String, id:Int ,postPath:String , overview:String , voteCount:Int ) {
+    init(title:String , releaseDate:String, id:Int ,postPath:String , overview:String , voteCount:Int , voteAverage:Float) {
         self.title = title
         self.releaseDate = releaseDate
         self.id = id
         self.postPath = postPath
         self.overview = overview
         self.voteCount = voteCount
+        self.voteAverage = voteAverage
     }
 }

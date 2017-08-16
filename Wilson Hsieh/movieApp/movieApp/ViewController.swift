@@ -11,18 +11,27 @@ import UIKit
 class ViewController: UIViewController {
     
     var movie:Movie?
-
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
+    @IBOutlet weak var overview: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgView.image = movie?.dataImg
+        imgView.autoresizingMask  = [.flexibleWidth, .flexibleHeight]
+        imgView.contentMode = UIViewContentMode.scaleAspectFit
+        self.title = movie?.title
+        self.overview.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.overview.text = movie?.overview
         
-        print(movie?.title)
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

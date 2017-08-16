@@ -34,7 +34,7 @@ class TableViewController: UITableViewController {
             
             let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response,
                 error) in
-                
+               
                 if error != nil{
                     
                     print(error)
@@ -66,7 +66,9 @@ class TableViewController: UITableViewController {
                                 
                                 let voteCount = item["vote_count"] as! Int
                                 
-                                let movie = Movie(title:title , releaseDate:releaseDate, id:id ,postPath:postPath , overview:overview , voteCount:voteCount )
+                                let voteAverage = item["vote_average"] as! Float
+                                
+                                let movie = Movie(title:title , releaseDate:releaseDate, id:id ,postPath:postPath , overview:overview , voteCount:voteCount, voteAverage:voteAverage )
                                 
                                 movies.append( movie)
                                 
@@ -84,9 +86,8 @@ class TableViewController: UITableViewController {
                     
                 }
                 
-            })
+            }).resume()
             
-            task.resume()
         }
     }
     
@@ -143,21 +144,30 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = self.movies[indexPath.row].title
-        cell.detailTextLabel?.text = self.movies[indexPath.row].releaseDate
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MovieCellTableViewCell
         
-        
-        downloadImg(url: imgUrl+self.movies[indexPath.row].postPath!){
-            (data) in
-            //let iv = UIImageView(image: UIImage(data:data))
-            cell.imageView?.image = UIImage(data:data)
-            var frame = cell.imageView?.frame
-            cell.imageView?.frame = frame!
-            //cell.addSubview(iv)
+        if self.movies.count > indexPath.row {
+            
+            
+            cell.movieTitle.text = self.movies[indexPath.row].title
+            
+            
+            
+            downloadImg(url: imgUrl+self.movies[indexPath.row].postPath!){
+                (data) in
+                //let iv = UIImageView(image: UIImage(data:data))
+                self.movies[indexPath.row].dataImg = UIImage(data:data)
+                cell.imgData.image = self.movies[indexPath.row].dataImg
+                var frame = cell.imageView?.frame
+                cell.imageView?.frame = frame!
+                //cell.addSubview(iv)
+            }
+
         }
-        
+       
+        cell.setStarValue(starValue: (self.movies[indexPath.row].voteAverage! - 5))
+
         
         return cell
     }

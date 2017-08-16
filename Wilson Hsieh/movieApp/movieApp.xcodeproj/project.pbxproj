@@ -16,6 +16,10 @@
 		C866E52C1F42A6420086D46F /* movieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C866E52B1F42A6420086D46F /* movieAppUITests.swift */; };
 		C866E53C1F42A6EF0086D46F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C866E53B1F42A6EF0086D46F /* TableViewController.swift */; };
 		C866E53E1F42B9B20086D46F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C866E53D1F42B9B20086D46F /* Movie.swift */; };
+		C866E5401F440FF40086D46F /* MovieCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C866E53F1F440FF40086D46F /* MovieCellTableViewCell.swift */; };
+		C866E5441F4420B60086D46F /* all.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C866E5411F4420B60086D46F /* all.jpg */; };
+		C866E5451F4420B60086D46F /* helf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C866E5421F4420B60086D46F /* helf.jpg */; };
+		C866E5461F4420B60086D46F /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C866E5431F4420B60086D46F /* default.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		C866E52D1F42A6420086D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C866E53B1F42A6EF0086D46F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		C866E53D1F42B9B20086D46F /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C866E53F1F440FF40086D46F /* MovieCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCellTableViewCell.swift; sourceTree = "<group>"; };
+		C866E5411F4420B60086D46F /* all.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = all.jpg; sourceTree = "<group>"; };
+		C866E5421F4420B60086D46F /* helf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helf.jpg; sourceTree = "<group>"; };
+		C866E5431F4420B60086D46F /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +114,11 @@
 				C866E50D1F42A6420086D46F /* ViewController.swift */,
 				C866E50F1F42A6420086D46F /* Main.storyboard */,
 				C866E5121F42A6420086D46F /* Assets.xcassets */,
+				C866E5471F4420C50086D46F /* jpg */,
 				C866E5141F42A6420086D46F /* LaunchScreen.storyboard */,
 				C866E5171F42A6420086D46F /* Info.plist */,
 				C866E53D1F42B9B20086D46F /* Movie.swift */,
+				C866E53F1F440FF40086D46F /* MovieCellTableViewCell.swift */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -129,6 +139,16 @@
 				C866E52D1F42A6420086D46F /* Info.plist */,
 			);
 			path = movieAppUITests;
+			sourceTree = "<group>";
+		};
+		C866E5471F4420C50086D46F /* jpg */ = {
+			isa = PBXGroup;
+			children = (
+				C866E5431F4420B60086D46F /* default.jpg */,
+				C866E5411F4420B60086D46F /* all.jpg */,
+				C866E5421F4420B60086D46F /* helf.jpg */,
+			);
+			name = jpg;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C866E5161F42A6420086D46F /* LaunchScreen.storyboard in Resources */,
+				C866E5451F4420B60086D46F /* helf.jpg in Resources */,
 				C866E5131F42A6420086D46F /* Assets.xcassets in Resources */,
 				C866E5111F42A6420086D46F /* Main.storyboard in Resources */,
+				C866E5441F4420B60086D46F /* all.jpg in Resources */,
+				C866E5461F4420B60086D46F /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +294,7 @@
 				C866E50E1F42A6420086D46F /* ViewController.swift in Sources */,
 				C866E53C1F42A6EF0086D46F /* TableViewController.swift in Sources */,
 				C866E53E1F42B9B20086D46F /* Movie.swift in Sources */,
+				C866E5401F440FF40086D46F /* MovieCellTableViewCell.swift in Sources */,
 				C866E50C1F42A6420086D46F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +546,7 @@
 				C866E5321F42A6420086D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C866E5331F42A6420086D46F /* Build configuration list for PBXNativeTarget "movieAppTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +555,7 @@
 				C866E5351F42A6420086D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C866E5361F42A6420086D46F /* Build configuration list for PBXNativeTarget "movieAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +564,7 @@
 				C866E5381F42A6420086D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
