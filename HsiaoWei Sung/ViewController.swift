@@ -6,6 +6,34 @@
 //  Copyright © 2017年 Erica. All rights reserved.
 //
 
+//step1~3: 設計介面 > 連接介面到viewcontroller.swift > 調整介面格式
+//step4~5: 建立帳號 > 將帳號放到資料庫中
+//         4. 建立提醒視窗: 在點擊建立新帳號以後使用, 包括:
+//            建立func createalert提醒視窗(帳密輸入, 提醒有沒有輸入, 以及建立/取消按鈕), 在createaccountaction調用
+//         5. 建立coredata: 在xcdatamodeld新增entity與attribute, 將剛剛輸入提醒視窗的帳密儲存進coredata, 包括:
+//            import coredata, 建立func createuser將username, password放進coredata中
+//            在step4的提醒視窗中使用這個func, 才能在輸入帳號按創建後, 把帳密寫入資料庫
+//step6~7: 對應帳密資料庫 > 創建時對照 > 登入時也對照
+//         6. 將輸入創建視窗的帳密對到剛存好的coredata字典中, 確定帳號沒有找到才能建立帳號, 不然就出錯誤訊息, 包括:
+//            建立全域變量isexist
+//            將建立func fetchuser讓輸入創建視窗的username去對應coredata的帳密資料庫, 對到就將isexist設為true
+//            在createuser中加上判斷機制, 先加一行isexist = false, 再使用fetchuser看建立的username是否找得到資料,
+//            如果找得到(isexist = true), 就出錯誤訊息, 沒有才繼續createuser
+//         7. 登入時除了判斷格子有沒有填外, 將輸入的帳密對到coredata中判斷是否已存在, 沒有就建議他新增, 有就判斷密碼對不對
+//            在func fetchuser中新增返回array, 將讀到的username對到的密碼都存進來
+//            因為createuser有使用fetchuser, 所以要修改一下, 新增array在返回那邊
+//            在連接進來的login action中設定幾層的條件, 先判斷格子有沒有都填滿, 
+//            設定isexist = false, 如果跑完fetchuser變true的話, 判斷fetch返回的array密碼跟輸入的密碼一不一樣
+//            根據這三個條件去設定不同的error message
+//step8~10: 建立infoview框架 > 將訊息內容塞入框架 > 讓顏色跟著訊息調整
+//         8. 建立infoview框架: 高低, 預設位置, 加在viewcontroller上
+//         9. 建立infoview訊息與動畫
+//        10. 建立message與紅綠色的全域變量, 建立func infoview, 設定訊息 = message, 
+//            把所有錯誤訊息設為message, 再調用infoview
+
+
+
+
 //step1: 設計介面
 //建立專案時, 選擇use coredata, 需要用它儲存使用者帳號密碼等資料
 //介面:
@@ -23,8 +51,8 @@ import CoreData
 
 class ViewController: UIViewController {
 
-//step6: 判斷登入帳號是否存在
-    var isexist: Bool? //建立全域變量
+//step6: //建立全域變量isexist判斷登入帳號是否存在
+    var isexist: Bool?
 //step10-1: 設定顏色與message為全域變量, 這樣就可以不斷調用infoview func
     let redcolor = UIColor.init(red: 255/255, green: 10/255, blue: 10/255, alpha: 1) //UIColor = 0~1間的數字
     let greencolor = UIColor.init(red: 10/255, green: 125/255, blue: 125/255, alpha: 1)
@@ -145,7 +173,7 @@ class ViewController: UIViewController {
     
 //step7-2: 判斷登入帳號是否存在, 返回isexist外, 也返回dictionary, 這樣可以對密碼
     func fetchuser (username: String, completionHandler: @escaping (_ isexist: Bool,
-        _ userdictionary: NSArray //7.array格式的字典, 對密碼用的
+        _ userdictionary: NSArray //array格式的字典, 對密碼用的
         ) -> ()) {
         
         
